@@ -16,7 +16,7 @@ class ShareCurl {
 			$curl->options([CURLOPT_SHARE => $this->handle]);
 	}
 
-	public function execute () : Generator
+	public function execute () : \Generator
 	{
 		foreach ($this->handles as $curl)
 			yield $curl->execute();

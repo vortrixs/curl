@@ -82,7 +82,7 @@ class MultiCurl {
 		return $this->content();
     }
 
-    private function content () : Generator
+    private function content () : \Generator
     {
     	foreach ($this->handles as $curl)
     		yield curl_multi_getcontent($curl->handle());
@@ -93,7 +93,7 @@ class MultiCurl {
     	return curl_multi_info_read($this->handle);
     }
 
-    public function options (array $options) : Generator
+    public function options (array $options) : \Generator
     {
     	foreach ($options as $key => $value)
     		yield curl_multi_setopt($this->handle, $key, $value);
