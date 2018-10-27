@@ -82,7 +82,7 @@ class MultiCurl {
 		return $this->content();
     }
 
-    private function content () : array
+    private function content () : Generator
     {
     	foreach ($this->handles as $curl)
     		yield curl_multi_getcontent($curl->handle());
