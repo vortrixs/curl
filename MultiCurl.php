@@ -93,7 +93,7 @@ class MultiCurl {
     	return curl_multi_info_read($this->handle);
     }
 
-    public function options (array $options) : array
+    public function options (array $options) : Generator
     {
     	foreach ($options as $key => $value)
     		yield curl_multi_setopt($this->handle, $key, $value);
