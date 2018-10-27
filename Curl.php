@@ -10,7 +10,7 @@ class Curl {
 
 	public function __construct ($handle)
 	{
-		if (is_resource($))
+		if (is_resource($handle))
 			$this->handle = $handle;
 		elseif (is_string($handle))
 			$this->handle = curl_init($handle);
