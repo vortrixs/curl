@@ -24,7 +24,7 @@ class Curl {
 		$this->close();
 	}
 
-	public function handle()
+	public function handle ()
 	{
 		return $this->handle;
 	}

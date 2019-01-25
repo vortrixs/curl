@@ -4,10 +4,9 @@
 #
 version: 2
 jobs:
-  build:
+  tests:
     docker:
-      # specify the version you desire here
-      - image: circleci/php:7.1-browsers
+      - image: circleci/php:7.3.1
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -18,22 +17,11 @@ jobs:
 
     steps:
       - checkout
-
-      # Download and cache dependencies
-      #- restore_cache:
-      #    keys:
-      #    - v1-dependencies-{{ checksum "composer.json" }}
-      #    # fallback to using the latest cache if no exact match is found
-      #    - v1-dependencies-
-
-      #- run: composer install -n --prefer-dist
-
-      #- save_cache:
-      #    paths:
-      #      - ./vendor
-      #    key: v1-dependencies-{{ checksum "composer.json" }}
-        
-      # run tests!
-      - run: php -l Curl.php
-      - run: php -l MultiCurl.php
-      - run: php -l ShareCurl.php
+      - run:
+          name: Syntax check
+          command: |
+            php -l Curl.php
+            php -l MultiCurl.php
+            php -l ShareCurl.php
+      - run: php tests/curl_test.php
+      - run: php tests/curl_file_test.php
