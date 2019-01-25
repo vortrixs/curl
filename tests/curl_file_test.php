@@ -1,6 +1,6 @@
 <?php
 
-require ../Curl.php;
+require '../Curl.php';
 
 use Vortrixs\Curl\Curl;
 
