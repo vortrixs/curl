@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '../Curl.php';
+require __DIR__ . '/../Curl.php';
 
 use Vortrixs\Curl\Curl;
 
