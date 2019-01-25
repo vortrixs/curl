@@ -10,7 +10,7 @@ file_put_contents('./test.txt', 'This is a test file');
 
 $file = $curl->createCurlFile('test.txt', 'text/*', 'test_file');
 
-if (! ($file instanceof CURLFile))
+if (! ($file instanceof \CURLFile))
 {
 	echo 'CURLFile corrupted';
 	var_dump($file, file_get_contents('./test.txt'));

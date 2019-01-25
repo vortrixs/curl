@@ -75,9 +75,9 @@ class Curl {
 		return curl_exec($this->handle);
 	}
 
-	public function createCurlFile (string $filename, string $mimetype, string $postname) : CURLFile
+	public function createCurlFile (string $filename, string $mimetype, string $postname) : \CURLFile
 	{
-		return new CURLFile($filename, $mimetype, $postname);
+		return new \CURLFile($filename, $mimetype, $postname);
 	}
 
 	public function info (?int $option = null)
