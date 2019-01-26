@@ -22,11 +22,6 @@ class MultiCurl {
 			curl_multi_add_handle($this->handle, $curl->handle());
 	}
 
-	public function __destruct ()
-	{
-		$this->close();
-	}
-
 	public function close() : void
 	{
 		foreach ($this->handles as $curl)
