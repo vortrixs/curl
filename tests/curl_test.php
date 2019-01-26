@@ -10,22 +10,21 @@ try
 
 	$curl = new Curl('http://google.com');
 
-	var_dump($curl->version());
-
 	$curl->options([CURLOPT_RETURNTRANSFER => true, CURLOPT_FOLLOWLOCATION => true]);
 
 	$result = $curl->execute();
 
-	if (false === $result)
+	var_dump($curl->info(CURLINFO_HTTP_CODE));
+
+	if (false === $result || 200 !== $curl->info(CURLINFO_HTTP_CODE))
 	{
 		var_dump($curl->error(), $curl->errno());
 		$exit = 1;
 	}
 
-	var_dump($curl->info(CURLINFO_HTTP_CODE));
+	var_dump($result);
 
-	var_dump($curl);
-	//$curl->close();
+	$curl->close();
 }
 catch(\Throwable $t)
 {

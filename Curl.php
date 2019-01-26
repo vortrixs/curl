@@ -19,11 +19,6 @@ class Curl {
 			throw new \RuntimeException('Could not set cURL handle.');
 	}
 
-	public function __destruct ()
-	{
-		$this->close();
-	}
-
 	public function handle ()
 	{
 		return $this->handle;
