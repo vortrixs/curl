@@ -15,8 +15,8 @@ jobs:
       - run:
           name: Syntax check
           command: |
-            php -l Curl.php
-            php -l MultiCurl.php
-            php -l ShareCurl.php
+            php -l src/Curl.php
+            php -l src/MultiCurl.php
+            php -l src/ShareCurl.php
       - run: php tests/curl_test.php
       - run: php tests/multi_curl_test.php
