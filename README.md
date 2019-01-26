@@ -4,6 +4,7 @@
 
 # Requirements
 * PHP 7.2 or newer
+* ext-curl
 
 # Usage
 
