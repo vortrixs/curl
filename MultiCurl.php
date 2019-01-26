@@ -56,19 +56,10 @@ class MultiCurl {
 
 	public function execute ()
 	{
-		$active = null;
-
 		do {
-		    $mrc = curl_multi_exec($this->handle, $active);
-		} while ($mrc == CURLM_CALL_MULTI_PERFORM);
-
-		while ($active && $mrc == CURLM_OK) {
-		    if (curl_multi_select($this->handle) != -1) {
-		        do {
-		            $mrc = curl_multi_exec($this->handle, $active);
-		        } while ($mrc == CURLM_CALL_MULTI_PERFORM);
-		    }
-		}
+		    curl_multi_exec($this->handle, $running);
+		    curl_multi_select($this->handle);
+		} while ($running > 0);
 
 		return $this->content();
     }
