@@ -24,12 +24,8 @@ try
 
 	$result = $multi->execute();
 
-	var_dump(
-		$result,
-		$multi->errno(),
-		$multi->strerror(),
-		$multi->info()
-	);
+	foreach ($result as $k => $v)
+		var_dump($k, $v);
 
 	$multi->close();
 }
