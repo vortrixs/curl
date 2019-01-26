@@ -6,8 +6,6 @@ use Vortrixs\Curl\Curl;
 
 try
 {
-	$exit = 0;
-
 	$curl = new Curl('http://google.com');
 
 	$curl->options([CURLOPT_RETURNTRANSFER => true, CURLOPT_FOLLOWLOCATION => true]);
@@ -19,17 +17,17 @@ try
 	if (false === $result || 200 !== $curl->info(CURLINFO_HTTP_CODE))
 	{
 		var_dump($curl->error(), $curl->errno());
-		$exit = 1;
+		$curl->close();
+		exit(1);
 	}
 
 	var_dump($result);
 
 	$curl->close();
+	exit(0);
 }
 catch(\Throwable $t)
 {
 	echo $t;
-	$exit = 1;
+	exit(1);
 }
-
-exit($exit);

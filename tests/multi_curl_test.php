@@ -27,6 +27,7 @@ try
 	if ($multi->errno() > 0)
 	{
 		echo "cURL Error {$multi->errno()}: {$multi->strerror()}";
+		$multi->close();
 		exit(1);
 	}
 
@@ -34,11 +35,10 @@ try
 		echo substr($content, 0, 100) . str_repeat(PHP_EOL, 2);
 
 	$multi->close();
+	exit(0);
 }
 catch(\Throwable $t)
 {
 	echo $t;
 	exit(1);
 }
-
-exit(0);
