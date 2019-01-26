@@ -31,7 +31,7 @@ try
 	}
 
 	foreach ($result as $content)
-		echo substr($content, 0, 100);
+		echo substr($content, 0, 100) . str_repeat(PHP_EOL, 2);
 
 	$multi->close();
 }
