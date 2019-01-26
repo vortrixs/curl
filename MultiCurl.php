@@ -25,9 +25,7 @@ class MultiCurl {
 	public function close() : void
 	{
 		foreach ($this->handles as $curl)
-		{
 			$this->remove($curl);
-		}
 
 		curl_multi_close($this->handle);
 	}
@@ -56,7 +54,7 @@ class MultiCurl {
 		return curl_multi_strerror($errno ?? $this->errno());
 	}
 
-	public function execute () : int
+	public function execute ()
 	{
 		$active = null;
 
