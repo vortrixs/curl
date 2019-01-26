@@ -24,15 +24,21 @@ try
 
 	$result = $multi->execute();
 
-	foreach ($result as $k => $v)
-		var_dump($k, $v);
+	if ($multi->errno() > 0)
+	{
+		echo "cURL Error {$multi->errno()}: {$multi->strerror()}";
+		exit(1);
+	}
+
+	foreach ($result as $content)
+		echo substr($content, 0, 100);
 
 	$multi->close();
 }
 catch(\Throwable $t)
 {
 	echo $t;
-	$exit = 1;
+	exit(1);
 }
 
-exit($exit);
+exit(0);
