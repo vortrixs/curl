@@ -1,6 +1,6 @@
 # Curl Wrappers for OOP
 
-[![CircleCI](https://circleci.com/gh/vortrixs/curl/tree/master.svg?style=svg)](https://circleci.com/gh/vortrixs/curl/tree/master)
+[![CircleCI](https://circleci.com/gh/vortrixs/curl/tree/master.svg?style=shield)](https://circleci.com/gh/vortrixs/curl/tree/master)
 
 # Requirements
 * PHP 7.2 or newer
