@@ -9,7 +9,7 @@
 
 ## cURL
 
-```
+```php
 use Vortrixs\Curl\Curl;
 
 $curl = new Curl('http://google.com');
@@ -32,7 +32,7 @@ $curl->close();
 
 ## Multi cURL
 
-```
+```php
 use Vortrixs\Curl\Curl;
 use Vortrixs\Curl\MultiCurl;
 
