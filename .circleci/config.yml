@@ -7,11 +7,6 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.3.1
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mysql:9.4
 
     working_directory: ~/repo
 
@@ -24,3 +19,4 @@ jobs:
             php -l MultiCurl.php
             php -l ShareCurl.php
       - run: php tests/curl_test.php
+      - run: php tests/multi_curl_test.php
