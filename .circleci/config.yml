@@ -24,4 +24,3 @@ jobs:
             php -l MultiCurl.php
             php -l ShareCurl.php
       - run: php tests/curl_test.php
-      - run: php tests/curl_file_test.php
