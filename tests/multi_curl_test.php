@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/../Curl.php';
-require __DIR__ . '/../MultiCurl.php';
+require __DIR__ . '/../src/Curl.php';
+require __DIR__ . '/../src/MultiCurl.php';
 
 use Vortrixs\Curl\Curl;
 use Vortrixs\Curl\MultiCurl;
