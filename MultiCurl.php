@@ -26,9 +26,7 @@ class MultiCurl {
 	{
 		foreach ($this->handles as $curl)
 		{
-			curl_multi_remove_handle($this->handle, $curl->handle());
-
-			$curl->close();
+			$this->remove($curl);
 		}
 
 		curl_multi_close($this->handle);
@@ -88,9 +86,10 @@ class MultiCurl {
     	return curl_multi_info_read($this->handle);
     }
 
-    public function options (array $options) : \Generator
+    public function options (array $options) : void
     {
     	foreach ($options as $key => $value)
-    		yield curl_multi_setopt($this->handle, $key, $value);
+    		if (false === curl_multi_setopt($this->handle, $key, $value))
+    			throw new \RuntimeException("Could not set cURL option.");
     }
 }
