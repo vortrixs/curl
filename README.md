@@ -2,6 +2,9 @@
 
 [![CircleCI](https://circleci.com/gh/vortrixs/curl/tree/master.svg?style=shield)](https://circleci.com/gh/vortrixs/curl/tree/master)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vortrixs/curl/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vortrixs/curl/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/vortrixs/curl/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vortrixs/curl/build-status/master)
+
 # Requirements
 * PHP 7.2 or newer
 * ext-curl
