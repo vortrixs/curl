@@ -4,7 +4,7 @@ namespace Vortrixs\Curl;
 
 class Curl {
 	/**
-	 * @var resource
+	 * @var resource|false
 	 */
 	private $handle;
 
@@ -57,12 +57,12 @@ class Curl {
 
 	public function escape (string $string) : string
 	{
-		return curl_escape($this->handle, $str);
+		return curl_escape($this->handle, $string);
 	}
 
 	public function unescape (string $string) : string
 	{
-		return curl_unescape($this->handle, $str);
+		return curl_unescape($this->handle, $string);
 	}
 
 	public function execute ()
